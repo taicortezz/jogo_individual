@@ -7,7 +7,7 @@ class scene_two extends Phaser.Scene{
 
     // variáveis
     cursors;
-    _plataforma;
+    plataforma2;
     persona;
     star;
     score = 0;
@@ -17,7 +17,7 @@ class scene_two extends Phaser.Scene{
 preload()
 { this.load.image('fundo', 'assets/fundo.png');
 this.load.image('arcoiris', 'assets/arcoiris.png')
-this.load.image('_plataforma', 'assets/plataforma2.png');
+this.load.image('plataforma2', 'assets/plataforma2.png');
 this.load.image('star', 'assets/star.png');
 this.load.spritesheet('persona_jogo',
     'assets/persona_jogo.png',
@@ -32,20 +32,20 @@ create()
     this.add.image(400, 300, 'fundo');
     this.add.image(400, 400, 'arcoiris');
     // criando a váriavel plataforma como um grupo estático, ou seja, que não sofre interferência da física do jogo.
-    this._plataforma = this.physics.add.staticGroup();
+    this.plataforma2 = this.physics.add.staticGroup();
     // adicionando todas as plataformas, cada uma em uma posição específica.
-    this._plataforma.create(600, 140, '_plataforma').setScale(2).refreshBody();
-    this._plataforma.create(200, 250, '_plataforma').setScale(2).refreshBody();
-    this._plataforma.create(360, 100, '_plataforma').setScale(2).refreshBody();
-    this._plataforma.create(600, 400, '_plataforma').setScale(2).refreshBody();
-    this._plataforma.create(750, 280, '_plataforma').setScale(2).refreshBody();
-    this._plataforma.create(400, 510, '_plataforma').setScale(2).refreshBody();
-    this._plataforma.create(100, 100, '_plataforma').setScale(2).refreshBody();
-    this._plataforma.create(400, 300, '_plataforma').setScale(2).refreshBody();
-    this._plataforma.create(8, 370, '_plataforma').setScale(2).refreshBody();
-    this._plataforma.create(150, 580, '_plataforma').setScale(2).refreshBody();
-    this._plataforma.create(280, 450, '_plataforma').setScale(2).refreshBody();
-    this._plataforma.create(500, 580, '_plataforma').setScale(2).refreshBody();
+    this.plataforma2.create(600, 140, 'plataforma2').setScale(2).refreshBody();
+    this.plataforma2.create(200, 250, 'plataforma2').setScale(2).refreshBody();
+    this.plataforma2.create(360, 100, 'plataforma2').setScale(2).refreshBody();
+    this.plataforma2.create(600, 400, 'plataforma2').setScale(2).refreshBody();
+    this.plataforma2.create(750, 280, 'plataforma2').setScale(2).refreshBody();
+    this.plataforma2.create(400, 510, 'plataforma2').setScale(2).refreshBody();
+    this.plataforma2.create(100, 100, 'plataforma2').setScale(2).refreshBody();
+    this.plataforma2.create(400, 300, 'plataforma2').setScale(2).refreshBody();
+    this.plataforma2.create(8, 370, 'plataforma2').setScale(2).refreshBody();
+    this.plataforma2.create(150, 580, 'plataforma2').setScale(2).refreshBody();
+    this.plataforma2.create(280, 450, 'plataforma2').setScale(2).refreshBody();
+    this.plataforma2.create(500, 580, 'plataforma2').setScale(2).refreshBody();
 
     //criando a váriavel persona
     this.persona = this.physics.add.sprite(400, 350, 'persona_jogo');
@@ -93,8 +93,8 @@ create()
     });
 
     // adicionando colisão do personagem com a plataforma
-    this.physics.add.collider(this.persona, this._plataforma);
-    this.physics.add.collider(this.star, this._plataforma);
+    this.physics.add.collider(this.persona, this.plataforma2);
+    this.physics.add.collider(this.star, this.plataforma2);
 };
 
 collectStar (persona, star) {
