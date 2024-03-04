@@ -17,7 +17,7 @@ class scene_two extends Phaser.Scene{
 preload()
 { this.load.image('fundo', 'assets/fundo.png');
 this.load.image('arcoiris', 'assets/arcoiris.png')
-this.load.image('_plataforma', 'assets/star.png');
+this.load.image('_plataforma', 'assets/plataforma2.png');
 this.load.image('star', 'assets/star.png');
 this.load.spritesheet('persona_jogo',
     'assets/persona_jogo.png',
