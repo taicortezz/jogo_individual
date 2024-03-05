@@ -1,6 +1,7 @@
-const larguraJogo = 800; 
-const alturaJogo = 600; 
+const larguraJogo = 800; //definindo largura do jogo
+const alturaJogo = 600; //definindo altura do jogo
 
+// algumas confugurações básicas
 window.onload = function()
 {
     let gameConfig = 
@@ -24,8 +25,8 @@ window.onload = function()
         },
         
         
-        backgroundColor: 'ffffff',
-        scene:[scene_one, scene_two],
+        backgroundColor: 'ffffff', // colocando a cor de fundo branca
+        scene:[scene_one, scene_two], // colocando as duas cenas do jogo
         parent: 'game',
         dom:{
             createContainer: false
